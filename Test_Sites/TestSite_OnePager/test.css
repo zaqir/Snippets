@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#titlepage {
+width:99.9vw;
+	position:relative;
+    height:100vh;
+    background-image:url(2.jpg);
+    -moz-background-size:cover;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position:center bottom;
+    background-repeat:no-repeat;
+    background-attachment:relative;
+    overflow-y:hidden
+}
