@@ -65,215 +65,114 @@ h1 {
   vertical-align: middle;
 }
 
-/* unvisited link */
-a:link {
-    color: #ffffff;
-}
 
-/* visited link */
-a:visited {
-    color: #ffffff;
-}
+View full CSS source code
 
-/* mouse over link */
-a:hover {
-    color: #ffffff;
-}
+Demo 2: Use image sprites for responsive image grids
 
-/* selected link */
-a:active {
-    color: #ffffff;
+▲
+© 2016 - MenucoolTM
+Term of Use  |  License Agreement  |  Contact Us
+#rig {
+    max-width:900px;
+    margin:0 auto; /*center aligned*/
+    padding:0;
+    font-size:0; /* Remember to change it back to normal font size if have captions */
+    list-style:none;
+    background-color:#000;
 }
-.demo-2 {
-    position:relative;
-    width:300px;
-    height:200px;
-    float:left;
-    margin-right:20px;
-    background-color:rgba(26,76,110,0.5)
-}
-.demo-2 p,.demo-2 h2 {
-    color:#fff;
-    padding:10px;
-    left:-20px;
-    top:20px;
-    position:relative
-}
-.demo-2 p {
-    font-family:'Lato';
-    font-size:12px;
-    line-height:18px;
-    margin:0
-}
-.demo-2 h2 {
-    font-size:20px;
-    line-height:24px;
+#rig li {
+    display: inline-block;
+    *display:inline;/*for IE6 - IE7*/
+    width:25%;
+    vertical-align:middle;
+    box-sizing:border-box;
     margin:0;
-    font-family:'Lato'
+    padding:0;
 }
-.effect img {
+
+/* The wrapper for each item */
+.rig-cell {
+    /*margin:12px;
+    box-shadow:0 0 6px rgba(0,0,0,0.3);*/
+    display:block;
+    position: relative;
+    overflow:hidden;
+}
+
+/* If have the image layer */
+.rig-img {
+    display:block;
+    width: 100%;
+    height: auto;
+    border:none;
+    transform:scale(1);
+    transition:all 1s;
+}
+
+#rig li:hover .rig-img {
+    transform:scale(1.05);
+}
+
+/* If have the overlay layer */
+.rig-overlay {
+    position: absolute;
+    display:block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #3DC0F1 url(img/link.png) no-repeat center 20%;
+    background-size:50px 50px;
+    opacity:0;
+    filter:alpha(opacity=0);/*For IE6 - IE8*/
+    transition:all 0.6s;
+}
+#rig li:hover .rig-overlay {
+    opacity:0.8;
+}
+
+/* If have captions */
+.rig-text {
+    display:block;
+    padding:0 30px;
+    box-sizing:border-box;
     position:absolute;
     left:0;
-    bottom:0;
-    cursor:pointer;
-    margin:-12px 0;
-    -webkit-transition:bottom .3s ease-in-out;
-    -moz-transition:bottom .3s ease-in-out;
-    -o-transition:bottom .3s ease-in-out;
-    transition:bottom .3s ease-in-out
+    width:100%;
+    text-align:center;
+    text-transform:capitalize;
+    font-size:18px;
+    font-weight:bold;
+    font-family: 'Oswald', sans-serif;
+    font-weight:normal!important;
+    top:40%;
+    color:white;
+    opacity:0;
+    filter:alpha(opacity=0);/*For older IE*/
+    transform:translateY(-20px);
+    transition:all .3s;
 }
-.effect img.top:hover {
-    bottom:-96px;
-    padding-top:100px
-}
-h2.zero,p.zero {
-    margin:0;
-    padding:0
-}
-
-
-
-
-
-
-
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-
-
-#form-div {
-	background-color:rgba(72,72,72,0.4);
-	padding-left:35px;
-	padding-right:35px;
-	padding-top:35px;
-	padding-bottom:50px;
-	width: 450px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
+#rig li:hover .rig-text {
+    transform:translateY(0px);
+    opacity:0.9;
 }
 
-.feedback-input {
-	color:#3c3c3c;
-	font-family: Helvetica, Arial, sans-serif;
-  font-weight:500;
-	font-size: 18px;
-	border-radius: 0;
-	line-height: 22px;
-	background-color: #fbfbfb;
-	padding: 13px 13px 13px 54px;
-	margin-bottom: 10px;
-	width:100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-  border: 3px solid rgba(0,0,0,0);
+@media (max-width: 9000px) {
+    #rig li {
+        width:25%;
+    }
 }
 
-.feedback-input:focus{
-	background: #fff;
-	box-shadow: 0;
-	border: 3px solid #3498db;
-	color: #3498db;
-	outline: none;
-  padding: 13px 13px 13px 54px;
+@media (max-width: 700px) {
+    #rig li {
+        width:33.33%;
+    }
 }
 
-.focused{
-	color:#30aed6;
-	border:#30aed6 solid 3px;
-}
-
-/* Icons ---------------------------------- */
-#name{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-	background-size: 30px 30px;
-	background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-#name:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
-	background-size: 30px 30px;
-	background-position: 8px 5px;
-  background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-#email{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-	background-size: 30px 30px;
-	background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-#email:focus{
-	background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
-	background-size: 30px 30px;
-  background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-#comment{
-	background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
-	background-size: 30px 30px;
-	background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-textarea {
-    width: 100%;
-    height: 150px;
-    line-height: 150%;
-    resize:vertical;
-}
-
-input:hover, textarea:hover,
-input:focus, textarea:focus {
-	background-color:white;
-}
-
-#button-blue{
-	font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-	float:left;
-	width: 100%;
-	border: #fbfbfb solid 4px;
-	cursor:pointer;
-	background-color: #3498db;
-	color:white;
-	font-size:24px;
-	padding-top:22px;
-	padding-bottom:22px;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-  margin-top:-4px;
-  font-weight:700;
-}
-
-#button-blue:hover{
-	background-color: rgba(0,0,0,0);
-	color: #0493bd;
-}
-
-.submit:hover {
-	color: #3498db;
-}
-
-.ease {
-	width: 0px;
-	height: 74px;
-	background-color: #fbfbfb;
-	-webkit-transition: .3s ease;
-	-moz-transition: .3s ease;
-	-o-transition: .3s ease;
-	-ms-transition: .3s ease;
-	transition: .3s ease;
-}
-
-.submit:hover .ease{
-  width:100%;
-  background-color:white;
-}
-
+@media (max-width: 550px) {
+    #rig li {
+        width:50%;
+    }
 }
